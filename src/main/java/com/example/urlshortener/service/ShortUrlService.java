@@ -1,7 +1,9 @@
-package com.example.demo.service;
+package com.example.urlshortener.service;
 
-import com.example.demo.model.ShortUrl;
-import com.example.demo.repository.ShortUrlRepository;
+import com.example.urlshortener.exception.ShortUrlExpiredException;
+import com.example.urlshortener.model.ShortUrl;
+import com.example.urlshortener.repository.ShortUrlRepository;
+import com.example.urlshortener.exception.ShortUrlNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
@@ -36,7 +38,7 @@ public class ShortUrlService {
         Optional<ShortUrl> found = repository.findByCode(code);
 
         if (found.isEmpty()) {
-            throw new IllegalStateException("URL does not exist!");
+            throw new ShortUrlNotFoundException(code);
         }
 
         ShortUrl shortUrl = found.get();
@@ -50,7 +52,8 @@ public class ShortUrlService {
             return shortUrl;
 
         } else {
-            throw new IllegalStateException("URL has expired!");
+
+            throw new ShortUrlExpiredException(code);
         }
 
     }

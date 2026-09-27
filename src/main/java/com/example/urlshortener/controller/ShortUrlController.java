@@ -1,8 +1,8 @@
-package com.example.demo.controller;
+package com.example.urlshortener.controller;
 
-import com.example.demo.model.ShortUrl;
-import com.example.demo.model.ShortUrlResponse;
-import com.example.demo.service.ShortUrlService;
+import com.example.urlshortener.model.ShortUrl;
+import com.example.urlshortener.model.ShortUrlResponse;
+import com.example.urlshortener.service.ShortUrlService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.http.HttpStatus;

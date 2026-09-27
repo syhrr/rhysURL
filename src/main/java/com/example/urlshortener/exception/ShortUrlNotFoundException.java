@@ -1,4 +1,4 @@
-package exception;
+package com.example.urlshortener.exception;
 
 public class ShortUrlNotFoundException extends RuntimeException {
     private final String code;

@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.urlshortener.service;
 
 import org.springframework.stereotype.Component;
 

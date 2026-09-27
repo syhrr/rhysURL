@@ -1,4 +1,4 @@
-package exception;
+package com.example.urlshortener.exception;
 
 public class ShortUrlExpiredException extends RuntimeException {
     private final String code;
