@@ -34,6 +34,7 @@ public class ShortUrlService {
         throw new IllegalStateException("Failed to generate a unique code after " + MAX_CODE_ATTEMPTS + " attempts");
     }
 
+
     public ShortUrl resolve(String code){
         Optional<ShortUrl> found = repository.findByCode(code);
 

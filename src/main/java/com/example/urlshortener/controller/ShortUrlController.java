@@ -5,6 +5,7 @@ import com.example.urlshortener.model.ShortUrlResponse;
 import com.example.urlshortener.service.ShortUrlService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import org.hibernate.validator.constraints.URL;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -53,7 +54,7 @@ public class ShortUrlController {
     }
 
     public record CreateShortUrlRequest(
-            @NotBlank String targetUrl,
+            @NotBlank @URL String targetUrl,
             Instant expiresAt
     ) {}
 }
